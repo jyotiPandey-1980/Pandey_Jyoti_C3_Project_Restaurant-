@@ -74,21 +74,37 @@ public class Restaurant {
 
     //Function to Select Item
     public List<Item> selectItemByName(String itemName){
+        for(Item item: menu) {
+            if(item.getName().equals(itemName))
+            	selectedMenu.add(item);
+        }
         
        
-        return null;
+        return selectedMenu;
     }
     
     //Function to UnSelect Item
     public List<Item> UnSelectItemByName(String itemName){
     	
-        	return null;
+        for(Item item: selectedMenu) {
+            if(item.getName().equals(itemName))
+            	selectedMenu.remove(item);
+        }
+        	return selectedMenu;
        
     }
     
     //calculate totalAmount
     public int calculateAmount(){
-    	
-        return null;
+    	totalAmount = 0;
+    	if(selectedMenu.size() !=0) {
+        for(Item item: selectedMenu) {
+        	 System.out.println(" Item Price :"+item.getPrice());
+        	totalAmount += item.getPrice();
+        	 System.out.println("Selected Item :"+totalAmount);
+        }
+    	}
+        return totalAmount;
     }
+   
 }

@@ -8,7 +8,7 @@ public class Item {
     }
 
 	public int getPrice() {
-        return null;
+        return price;
     }
     public String getName() {
         return name;
