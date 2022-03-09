@@ -7,6 +7,9 @@ public class Item {
         this.price = price;
     }
 
+	public int getPrice() {
+        return null;
+    }
     public String getName() {
         return name;
     }

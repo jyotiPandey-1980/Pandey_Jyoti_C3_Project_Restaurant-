@@ -64,4 +64,41 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+	//>>>>>>>>>>>>>>>>>>>>>>>>>>>Total calculated Price<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void adding_item_to_menu_should_increase_totalAmount_withSelectedItem_price(){
+
+        restaurant.selectItemByName("Sweet corn soup");
+       
+        assertEquals(119,restaurant.calculateAmount());
+        
+        restaurant.selectItemByName("Vegetable lasagne");
+       
+        assertEquals(388,restaurant.calculateAmount());
+    }
+  
+    @Test
+    public void removing_item_to_menu_havingTwoItems_should_decrease_totalAmount_withUnSelectedItem_price(){
+    	
+    	  restaurant.selectItemByName("Sweet corn soup");
+    	  restaurant.selectItemByName("Vegetable lasagne");
+       
+    	  restaurant.UnSelectItemByName("Sweet corn soup");
+     
+    	  assertEquals(269,restaurant.calculateAmount());
+        
+    }
+    
+    @Test
+    public void removing_item_to_menu_havingOneItem_should_decrease_totalAmount_withUnSelectedItem_price(){
+    	
+    	  restaurant.selectItemByName("Sweet corn soup");
+    	
+    	  restaurant.UnSelectItemByName("Sweet corn soup");
+     
+    	  assertEquals(0,restaurant.calculateAmount());
+    }
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>Total calculated Price<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  
 }
