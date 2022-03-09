@@ -25,7 +25,7 @@ class RestaurantTest {
          LocalTime closingTime1 = LocalTime.now().plus( 1 , ChronoUnit.HOURS );
          Restaurant restaurant1 = new Restaurant("Amelie's cafe","Chennai",openingTime1,closingTime1);
          
-         assertEquals(true,restaurant.isRestaurantOpen());
+         assertEquals(true,restaurant1.isRestaurantOpen());
     }
 
     @Test
@@ -34,7 +34,7 @@ class RestaurantTest {
          LocalTime closingTime1 = LocalTime.now().plus( 2 , ChronoUnit.HOURS );
          Restaurant restaurant1 = new Restaurant("Amelie's cafe","Chennai",openingTime1,closingTime1);
          
-         assertEquals(false,restaurant.isRestaurantOpen());
+         assertEquals(false,restaurant1.isRestaurantOpen());
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
