@@ -19,20 +19,20 @@ class RestaurantTest {
 		
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
-    @Test
-     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
+     @Test
+    public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
     	 LocalTime openingTime1 = LocalTime.now().minus( 1 , ChronoUnit.HOURS );
          LocalTime closingTime1 = LocalTime.now().plus( 1 , ChronoUnit.HOURS );
-         Restaurant restaurant1 = new Restaurant("Amelie's cafe","Chennai",openingTime1,closingTime1);
+         Restaurant restaurant1 =new Restaurant("Amelie's cafe","Chennai",openingTime1,closingTime1);
          
          assertEquals(true,restaurant1.isRestaurantOpen());
     }
 
     @Test
-      public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
+    public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
     	 LocalTime openingTime1 = LocalTime.now().plus( 1 , ChronoUnit.HOURS );
-         LocalTime closingTime1 = LocalTime.now().plus( 2 , ChronoUnit.HOURS );
-         Restaurant restaurant1 = new Restaurant("Amelie's cafe","Chennai",openingTime1,closingTime1);
+         LocalTime closingTime1 = LocalTime.now().plus( 4 , ChronoUnit.HOURS );
+         Restaurant restaurant1 =new Restaurant("Amelie's cafe","Mumbai",openingTime1,closingTime1);
          
          assertEquals(false,restaurant1.isRestaurantOpen());
     }
